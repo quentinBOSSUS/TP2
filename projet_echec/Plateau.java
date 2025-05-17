@@ -13,13 +13,15 @@ class Plateau{
 	this.ajouterPiece(new Fou('B', new Position("F1")));
 	this.ajouterPiece(new Cavalier('B', new Position("G1")));
 	this.ajouterPiece(new Tour('B', new Position("H1")));
-	this.ajouterPiece(new Tavalier('B', new Position("A3")));
-	this.ajouterPiece(new Tavalier('B', new Position("H3")));
+	this.ajouterPiece(new Tavalier('B', new Position("C2")));
+	this.ajouterPiece(new Tavalier('B', new Position("F2")));
 
 	for(char c = 'A'; c < 'I' ; c++){
-	    this.ajouterPiece(new PionBlanc(new Position(c+"2")));
-	    this.ajouterPiece(new PionNoir(new Position(c+"7")));
-	    }
+		if (c != 'C' && c != 'F') {
+			this.ajouterPiece(new PionBlanc(new Position(c+"2")));
+			this.ajouterPiece(new PionNoir(new Position(c+"7")));
+		}
+	}
 
 	this.ajouterPiece(new Tour('N', new Position("A8")));
 	this.ajouterPiece(new Cavalier('N', new Position("B8")));
@@ -29,8 +31,8 @@ class Plateau{
 	this.ajouterPiece(new Fou('N', new Position("F8")));
 	this.ajouterPiece(new Cavalier('N', new Position("G8")));
 	this.ajouterPiece(new Tour('N', new Position("H8")));
-	this.ajouterPiece(new Tavalier('N', new Position("A6")));
-	this.ajouterPiece(new Tavalier('N', new Position("H6")));
+	this.ajouterPiece(new Tavalier('N', new Position("C7")));
+	this.ajouterPiece(new Tavalier('N', new Position("F7")));
     }
 
 
