@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import MG2D.*;
 import MG2D.geometrie.*;
@@ -70,7 +71,11 @@ class MainGraphique{
     }
     
     public static void main(String[] args){
-	Plateau p = new Plateau();
+	Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Activer le mode cheat ? (true/false) : ");
+    boolean cheat = scanner.nextBoolean();
+	Plateau p = new Plateau(cheat);
 	Fenetre f = new Fenetre("Jeu d'échecs", 8*MainGraphique.tailleCase, 10*MainGraphique.tailleCase);
 	Souris souris = f.getSouris();
 	char couleurQuiJoue = 'B';
