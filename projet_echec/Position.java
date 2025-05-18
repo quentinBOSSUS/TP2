@@ -6,17 +6,17 @@ class Position{
 	this.y = 0;
     }
 
-    public Position(int x, int y){
+    public Position(int x, int y) throws ErreurCoordonneesException{
         /* CAS 1 */
 	if(x < 0 || x > 7 || y < 0 || y > 7){
-	    System.out.println("Problème de positionnement : "+x+","+y);
-	    System.exit(1);
+		throw new ErreurCoordonneesException(x,y);
+	  
 	}
 	this.x = x;
 	this.y = y;
     }
 
-    public Position(String position){
+    public Position(String position)throws ErreurCoordonneesException{
 	/*
 	Nous devrions tester la longueur de la chaine *position*
 	mais pour une simplification du TP, nous ne faisons pas ce test.
@@ -26,9 +26,8 @@ class Position{
 	int y = (int)(position.charAt(1)-'1');
 	
 	/* CAS 2 */
-	if(x < 0 || x > 7 || y < 0 || y > 7){
-	    System.out.println("Problème de positionnement : "+x+","+y);
-	    System.exit(1);
+	if (x < 0 || x > 7 || y < 0 || y > 7) {
+		throw new ErreurCoordonneesException(x, y); 
 	}
 	
 	this.x = x;
@@ -50,20 +49,18 @@ class Position{
 	return this.y;
     }
 
-    public void setX(int x){
+    public void setX(int x) throws ErreurCoordonneesException{
         /* CAS 3 */
 	if(x < 0 || x > 7){
-	    System.out.println("Problème de positionnement setX : "+x);
-	    System.exit(1);
+	    throw new ErreurCoordonneesException(x, y);
 	}
 	this.x = x;
     }
 
-    public void setY(int y){
+    public void setY(int y) throws ErreurCoordonneesException{
         /* CAS 4 */
 	if(y < 0 || y > 7){
-	    System.out.println("Problème de positionnement setY : "+y);
-	    System.exit(1);
+	    throw new ErreurCoordonneesException(x, y);
 	}
 	this.y = y;
     }
@@ -89,13 +86,13 @@ class Position{
     }
 
     
-    /*
-    public static void main(String[] args){
-        // OK
+    
+    public static void main(String[] args)throws ErreurCoordonneesException{
+        
 	Position p = new Position();
 	System.out.println(p);
 	
-	// OK
+	
 	p = new Position("F4");
 	System.out.println(p);
 	
@@ -104,5 +101,5 @@ class Position{
 	p = new Position(9,5);
 	System.out.println(p);
     }
-    */
+    
 }

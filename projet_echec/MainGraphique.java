@@ -32,11 +32,11 @@ class MainGraphique{
 
 	// pieces banches
 	ArrayList<Piece> listeB = p.getPiecesBlanches();
-
+	
 	for(Piece pi : listeB)
 	    f.ajouter(new Texture("./images/"+pi.getNomLong()+".png", new Point(pi.getPosition().getX()*MainGraphique.tailleCase, pi.getPosition().getY()*MainGraphique.tailleCase), MainGraphique.tailleCase, MainGraphique.tailleCase));
 
-
+		
 	// pieces noires
 	ArrayList<Piece> listeN = p.getPiecesNoires();
 	
